@@ -3,7 +3,13 @@
 angular.module('portfolioApp')
   .controller('NavbarCtrl', function ($scope, $location, Auth) {
     $scope.menu = [{
-      'title': 'Home',
+      'title': 'Designer',
+      'link': '/'
+    },{
+      'title': 'Developer',
+      'link': '/'
+    },{
+      'title': 'Designer',
       'link': '/'
     }];
 

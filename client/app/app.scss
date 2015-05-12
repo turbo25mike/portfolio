@@ -15,9 +15,24 @@ $fa-font-path: "/bower_components/font-awesome/fonts";
     padding: 0.2em 0;
 }
 
+.header{
+    position: fixed;
+    left:50px;
+    right: 50px;
+    top: 0;
+    height: 50px;
+    z-index: 9999;
+}
+
+body{
+    background-color: rgb(107, 105, 102);
+    color:rgb(34, 34, 34);
+}
+
 // Component styles are injected through grunt
 // injector
 @import 'account/login/login.scss';
 @import 'admin/admin.scss';
 @import 'main/main.scss';
+@import 'modal/modal.scss';
 // endinjector
