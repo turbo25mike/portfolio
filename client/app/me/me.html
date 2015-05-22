@@ -1,0 +1,12 @@
+<div class="progress-wrapper" ng-hide="vm.me.$resolved">
+        <small>I'm thinking... I'm thinking...</small>
+        <div class="progress" style="width: 200px; height: 5px;">
+            <div class="progress-bar progress-bar-striped active" role="progressbar" style="width: 100%">
+                <span class="sr-only">loading...</span>
+            </div>
+        </div>
+    </div>
+
+<div class="page-wrapper" ng-show="vm.me.$resolved">
+<p class="font-exlg">{{vm.me[0].about}}</p>
+</div>

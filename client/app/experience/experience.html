@@ -1,0 +1,16 @@
+<div class="page-wrapper">
+    <article style="opacity:0; position:relative; top:60px;" ng-repeat="item in vm.item.experienceItems | orderBy: 'order'" style="{{item.style}}"  repeat-complete="vm.sectionsLoaded()">
+        <img ng-show="item.kind === 'image'" ng-src="http://res.cloudinary.com/{{vm.appSettings.cloudinaryName}}/image/upload/{{(item.transformations) ? item.transformations + '/': ''}}{{item.id}}.{{item.format}}" />
+        <div ng-show="item.kind === 'text'" class="font-exlg">{{item.info}}</div>
+    </article>
+</div>
+
+<div class="progress-wrapper" ng-hide="vm.item.$resolved">
+    Looks like we're still fetching this experience, hold on this shouldn't take long.
+    <div class="progress" style="width: 200px; height: 5px;">
+        <div class="progress-bar progress-bar-striped active" role="progressbar" style="width: 100%">
+            <span class="sr-only">loading...</span>
+        </div>
+    </div>
+</div>
+

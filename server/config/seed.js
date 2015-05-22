@@ -5,45 +5,92 @@
 
 'use strict';
 
-var Thing = require('../api/thing/thing.model');
+var Work = require('../api/work/work.model');
+var Tool = require('../api/tool/tool.model');
 var User = require('../api/user/user.model');
+var Config = require('../api/config/config.model');
 
-Thing.find({}).remove(function() {
-  Thing.create({
-    name : 'Development Tools',
-    info : 'Integration with popular tools such as Bower, Grunt, Karma, Mocha, JSHint, Node Inspector, Livereload, Protractor, Jade, Stylus, Sass, CoffeeScript, and Less.'
-  }, {
-    name : 'Server and Client integration',
-    info : 'Built with a powerful and fun stack: MongoDB, Express, AngularJS, and Node.'
-  }, {
-    name : 'Smart Build System',
-    info : 'Build system ignores `spec` files, allowing you to keep tests alongside code. Automatic injection of scripts and styles into your index.html'
-  },  {
-    name : 'Modular Structure',
-    info : 'Best practice client and server structures allow for more code reusability and maximum scalability'
-  },  {
-    name : 'Optimized Build',
-    info : 'Build process packs up your templates as a single JavaScript payload, minifies your scripts/css/images, and rewrites asset names for caching.'
-  },{
-    name : 'Deployment Ready',
-    info : 'Easily deploy your app to Heroku or Openshift with the heroku and openshift subgenerators'
-  });
+Config.find({}).remove(function () {
+    Config.create({
+        title: 'Jeff Johnson',
+        about: 'A short little bio.',
+        contactEmailAddress: 'test@test.com'
+    });
 });
 
-User.find({}).remove(function() {
-  User.create({
-    provider: 'local',
-    name: 'Test User',
-    email: 'test@test.com',
-    password: 'test'
-  }, {
-    provider: 'local',
-    role: 'admin',
-    name: 'Admin',
-    email: 'admin@admin.com',
-    password: 'admin'
-  }, function() {
-      console.log('finished populating users');
-    }
-  );
+Tool.find({}).remove(function () {
+    Tool.create({
+        name: 'Development Tools',
+        images: [{
+            id: 'sample2',
+            order: 2,
+            format: 'jpg'
+        }, {
+            id: 'sample',
+            order: 1,
+            format: 'jpg'
+        }]
+    });
+});
+
+Work.find({}).remove(function () {
+    Work.create({
+        name: 'Development Tools',
+        info: 'Integration with popular tools such as Bower, Grunt, Karma, Mocha, JSHint, Node Inspector, Livereload, Protractor, Jade, Stylus, Sass, CoffeeScript, and Less.',
+        style: 'overflow:hidden; color:black',
+        link: 'http://google.com',
+        date: '2015',
+        image: {
+            id: 'sample',
+            format: 'jpg'
+        },
+        experienceItems: [{
+            kind: 'image',
+            id: 'sample',
+            order: 1,
+            format: 'jpg'
+        }]
+    }, {
+        name: 'Server and Client integration',
+        info: 'Built with a powerful and fun stack: MongoDB, Express, AngularJS, and Node.',
+        style: 'overflow:hidden; background-color:Gainsboro; color: white;',
+        link: 'http://google.com',
+        date: '2015',
+        image: {
+            id: 'sample',
+            format: 'jpg'
+        },
+        experienceItems: [{
+            kind: 'image',
+            id: 'sample',
+            order: 1,
+            format: 'jpg'
+        }, {
+            kind: 'text',
+            info: 'Well hello there!',
+            order: 2
+        }, {
+            kind: 'image',
+            id: 'sample',
+            order: 3,
+            format: 'jpg'
+        }]
+    });
+});
+
+User.find({}).remove(function () {
+    User.create({
+        provider: 'local',
+        name: 'Test User',
+        email: 'test@test.com',
+        password: 'test'
+    }, {
+        provider: 'local',
+        role: 'admin',
+        name: 'Admin',
+        email: 'admin@admin.com',
+        password: 'admin'
+    }, function () {
+        console.log('finished populating users');
+    });
 });

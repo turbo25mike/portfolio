@@ -1,0 +1,57 @@
+<div class="progress-wrapper" ng-hide="vm.toys.$resolved">
+    <small>Patience is a virtue, hopefully we won't test it for to long.</small>
+    <div class="progress" style="width: 200px; height: 5px;">
+        <div class="progress-bar progress-bar-striped active" role="progressbar" style="width: 100%">
+            <span class="sr-only">loading...</span>
+        </div>
+    </div>
+</div>
+
+<div style="margin:65px;" ng-show="vm.toys.$resolved">
+    
+    
+    
+    <h1><i class="fa fa-music"></i> These are a few of my favorite things. <i class="fa fa-music"></i></h1>
+
+
+
+    <div ng-repeat="toy in vm.toys">
+        
+        <h2>{{toy.name}} <a href="/admin/toy/{{toy._id}}" class="btn btn-default btn-xs" ng-show="vm.isAdmin()"><i class="glyphicon glyphicon-pencil"></i></a></h2> 
+        <img ng-repeat="image in toy.images" src="assets/images/yeoman-logo.png" />
+        
+    </div>
+
+    <!--
+    <h2>SASS Solutions</h2>
+    <img src="assets/images/yeoman-logo.png" height="80px" alt="I'm Yeoman" />
+        <img src="assets/images/angular-logo.png" height="70px" style="margin-bottom:10px;" alt="Github" />
+        <img src="assets/images/bootstrap-logo.png" height="70px" style="margin-bottom:10px;" alt="Github" />
+        <img src="assets/images/sass-logo.png" height="70px" style="margin-bottom:10px;" alt="Github" />
+    <img src="assets/images/cloudinary-logo.png" height="70px" style="margin-bottom:10px;" alt="Github" />
+
+
+    <h2>Databases</h2>
+    <img src="assets/images/mongo-logo.png" height="70px" style="margin-bottom:10px;" alt="Github" />
+    <img src="assets/images/sql-logo.png" height="70px" style="margin-bottom:10px;" alt="Github" />
+
+    <h2>Servers/Services (REST)</h2>
+    <img src="assets/images/csharp-logo.png" height="70px" style="margin-bottom:10px;" alt="Github" />
+    <img src="assets/images/node-logo.png" height="70px" style="margin-bottom:10px;" alt="Github" />
+    <img src="assets/images/heroku-logo.png" height="70px" style="margin-bottom:10px;" alt="Github" />
+
+
+    <h2>Continuacy Integration</h2>
+    <img src="assets/images/bower-logo.png" height="70px" style="margin-bottom:10px;" alt="Bower" />
+    <img src="assets/images/teamcity-logo.png" height="70px" style="margin-bottom:10px;" alt="Bower" />
+    <img src="assets/images/grunt-logo.png" height="70px" style="margin-bottom:10px;" alt="Github" />
+    <img src="assets/images/gulp-logo.png" height="70px" style="margin-bottom:10px;" alt="Github" />
+
+    <h2>Collaboration Tools</h2>
+    <img src="assets/images/git-logo.png" height="70px" style="margin-bottom:10px;" alt="Github" />
+
+    <h2>Design Tools</h2>
+    <img src="assets/images/illustrator-logo.png" height="70px" style="margin-bottom:10px;" alt="Github" />
+    <img src="assets/images/photoshop-logo.png" height="70px" style="margin-bottom:10px;" alt="Github" />
+-->
+</div>

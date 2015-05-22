@@ -28,17 +28,22 @@
     <![endif]-->
 
     <!-- Add your site or application content here -->
-    <div ng-view=""></div>
+    <div ng-include="'components/navbar/navbar.html'"></div>
+    <div class="main" ng-view=""></div>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
     <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-      ga('create', 'UA-XXXXX-X');
-      ga('send', 'pageview');
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
     </script>
 
     <!--[if lt IE 9]>
@@ -56,6 +61,7 @@
       <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
       <script src="bower_components/lodash/dist/lodash.compat.js"></script>
       <script src="bower_components/onepage-scroll/jquery.onepage-scroll.js"></script>
+      <script src="bower_components/jquery.appear.js/jquery.appear.js"></script>
       <!-- endbower -->
     <!-- endbuild -->
 
@@ -68,14 +74,28 @@
           <script src="app/account/signup/signup.controller.js"></script>
           <script src="app/admin/admin.controller.js"></script>
           <script src="app/admin/admin.js"></script>
+          <script src="app/admin/toy/_routes.js"></script>
+          <script src="app/admin/toy/toy.controller.js"></script>
+          <script src="app/experience/_routes.js"></script>
+          <script src="app/experience/experience.controller.js"></script>
+          <script src="app/main/_routes.js"></script>
           <script src="app/main/main.controller.js"></script>
-          <script src="app/main/main.js"></script>
           <script src="app/main/onepage.directive.js"></script>
-          <script src="components/auth/auth.service.js"></script>
-          <script src="components/auth/user.service.js"></script>
+          <script src="app/main/repeatComplete.directive.js"></script>
+          <script src="app/me/_routes.js"></script>
+          <script src="app/me/me.controller.js"></script>
+          <script src="app/toys/_routes.js"></script>
+          <script src="app/toys/toys.controller.js"></script>
           <script src="components/modal/modal.service.js"></script>
           <script src="components/mongoose-error/mongoose-error.directive.js"></script>
           <script src="components/navbar/navbar.controller.js"></script>
+          <script src="components/services/appSettings.service.js"></script>
+          <script src="components/services/auth.service.js"></script>
+          <script src="components/services/config.service.js"></script>
+          <script src="components/services/tool.service.js"></script>
+          <script src="components/services/user.service.js"></script>
+          <script src="components/services/work.service.js"></script>
+          <script src="components/utilities/onepagehelper.js"></script>
           <!-- endinjector -->
         <!-- endbuild -->
 </body>

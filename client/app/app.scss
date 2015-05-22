@@ -1,9 +1,7 @@
 $icon-font-path: "/bower_components/bootstrap-sass-official/vendor/assets/fonts/bootstrap/";
 $fa-font-path: "/bower_components/font-awesome/fonts";
-
 @import 'bootstrap-sass-official/vendor/assets/stylesheets/bootstrap';
 @import 'font-awesome/scss/font-awesome';
-
 /**
  * App-wide Styles
  */
@@ -15,18 +13,51 @@ $fa-font-path: "/bower_components/font-awesome/fonts";
     padding: 0.2em 0;
 }
 
-.header{
+.header {
     position: fixed;
-    left:50px;
+    left: 50px;
     right: 50px;
     top: 0;
     height: 50px;
     z-index: 9999;
 }
 
-body{
-    background-color: rgb(107, 105, 102);
-    color:rgb(34, 34, 34);
+body {
+    //background-color: rgb(107, 105, 102);
+    //color:rgb(34, 34, 34);
+}
+
+a {
+    color: black;
+}
+
+.progress-wrapper {
+    margin: 100px;
+    font-size: 3em;
+}
+
+.page-wrapper {
+    margin: 100px;
+}
+
+.font-exlg {
+    font-size: 5em;
+}
+
+.font-lg {
+    font-size: 1.5em;
+}
+
+.font-md {
+    font-size: 1.25em;
+}
+
+.font-sm {
+    font-size: .75em;
+}
+
+.font-xsm {
+    font-size: .5em;
 }
 
 // Component styles are injected through grunt

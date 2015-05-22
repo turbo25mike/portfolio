@@ -1,0 +1,12 @@
+<div class="progress-wrapper" ng-hide="vm.toy.$resolved">
+    <small>loading...</small>
+    <div class="progress" style="width: 200px; height: 5px;">
+        <div class="progress-bar progress-bar-striped active" role="progressbar" style="width: 100%">
+            <span class="sr-only">loading...</span>
+        </div>
+    </div>
+</div>
+
+<div style="margin:65px;" ng-show="vm.toy.$resolved">
+    {{vm.toy}}
+</div>
