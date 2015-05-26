@@ -13,6 +13,7 @@ module.exports = function (app) {
     app.use('/api/config', require('./api/config'));
     app.use('/api/users', require('./api/user'));
     app.use('/api/tools', require('./api/tool'));
+    app.use('/api/cloudinary', require('./api/cloudinary'));
     app.use('/api/appSettings', require('./api/appSettings'));
 
     app.use('/auth', require('./auth'));

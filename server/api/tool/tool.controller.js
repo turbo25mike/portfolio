@@ -57,7 +57,7 @@ exports.update = function (req, res) {
         if (!tool) {
             return res.send(404);
         }
-        var updated = _.merge(tool, req.body);
+        var updated = _.extend(tool, req.body);
         updated.save(function (err) {
             if (err) {
                 return handleError(res, err);

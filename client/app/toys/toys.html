@@ -7,19 +7,13 @@
     </div>
 </div>
 
-<div style="margin:65px;" ng-show="vm.toys.$resolved">
-    
-    
+<div class="page-wrapper" ng-show="vm.toys.$resolved">
     
     <h1><i class="fa fa-music"></i> These are a few of my favorite things. <i class="fa fa-music"></i></h1>
 
-
-
     <div ng-repeat="toy in vm.toys">
-        
         <h2>{{toy.name}} <a href="/admin/toy/{{toy._id}}" class="btn btn-default btn-xs" ng-show="vm.isAdmin()"><i class="glyphicon glyphicon-pencil"></i></a></h2> 
-        <img ng-repeat="image in toy.images" src="assets/images/yeoman-logo.png" />
-        
+        <img style="margin-right:5px;" ng-repeat="image in toy.images" ng-src="http://res.cloudinary.com/{{vm.appSettings.cloudinaryName}}/image/upload/{{(image.transformations) ? image.transformations + '/': ''}}{{image.id}}.{{image.format}}" />
     </div>
 
     <!--

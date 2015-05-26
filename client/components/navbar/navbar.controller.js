@@ -1,18 +1,9 @@
 'use strict';
 
 angular.module('portfolioApp')
-  .controller('NavbarCtrl', function ($scope, $location, Auth) {
-    $scope.menu = [{
-      'title': 'Designer',
-      'link': '/'
-    },{
-      'title': 'Developer',
-      'link': '/'
-    },{
-      'title': 'Designer',
-      'link': '/'
-    }];
-
+  .controller('NavbarCtrl', function ($scope, $location, Auth, configService) {
+    var vm = this;
+    vm.config = configService.get();
     $scope.isCollapsed = true;
     $scope.isLoggedIn = Auth.isLoggedIn;
     $scope.isAdmin = Auth.isAdmin;

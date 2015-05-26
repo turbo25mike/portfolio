@@ -21,6 +21,7 @@ Config.find({}).remove(function () {
 Tool.find({}).remove(function () {
     Tool.create({
         name: 'Development Tools',
+        order: 1,
         images: [{
             id: 'sample2',
             order: 2,

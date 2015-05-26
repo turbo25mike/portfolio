@@ -5,6 +5,7 @@ var mongoose = require('mongoose'),
 
 var ToolSchema = new Schema({
     name: String,
+    order: Number,
     images: [{ 
         id: String, 
         format: String,
