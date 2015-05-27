@@ -8,7 +8,7 @@
 </div>
 
 <div class="page-wrapper" ng-show="vm.toys.$resolved">
-    
+    <a href="/admin/toy/new" class="btn btn-default btn-xs" ng-show="vm.isAdmin()"><i class="glyphicon glyphicon-plus"></i> new toy</a>
     <h1><i class="fa fa-music"></i> These are a few of my favorite things. <i class="fa fa-music"></i></h1>
 
     <div ng-repeat="toy in vm.toys">

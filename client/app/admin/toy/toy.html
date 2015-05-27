@@ -8,7 +8,6 @@
 </div>
 
 <div class="page-wrapper" ng-show="vm.toy.$resolved">
-    {{vm.toy}}
     <div class="col-md-9">
         <form class="form" name="form" ng-submit="save(form)" novalidate>
 
@@ -20,14 +19,14 @@
                     <button class="btn btn-primary btn-lg" type="submit">
                         Save
                     </button>
-                    <a class="btn btn-default btn-lg" href="/signup">
+                    <a class="btn btn-default btn-lg" href="/">
             Cancel
           </a>
                 </div>
             </div>
 
             <div class="form-group has-error">
-                <p class="help-block" ng-show="form.name.$error.name && submitted">
+                <p class="help-block" ng-show="form.name.$error.name && vm.submitted">
                     Please enter a valid title.
                 </p>
             </div>

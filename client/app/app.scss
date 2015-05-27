@@ -60,11 +60,25 @@ a {
     font-size: .5em;
 }
 
+@media (max-width: $screen-sm) {
+    .page-wrapper {
+        
+    margin: 45px 5px 5px 5px;
+        
+}
+    
+    .font-exlg {
+    font-size: 4em;
+}
+}
+
 // Component styles are injected through grunt
 // injector
 @import 'account/login/login.scss';
 @import 'admin/admin.scss';
+@import 'admin/experience/experience.scss';
 @import 'admin/toy/toy.scss';
 @import 'main/main.scss';
 @import 'modal/modal.scss';
+@import 'navbar/navbar.scss';
 // endinjector

@@ -12,7 +12,7 @@ var Config = require('../api/config/config.model');
 
 Config.find({}).remove(function () {
     Config.create({
-        title: 'Jeff Johnson',
+        name: 'JEFFJOHNSON',
         about: 'A short little bio.',
         contactEmailAddress: 'test@test.com'
     });

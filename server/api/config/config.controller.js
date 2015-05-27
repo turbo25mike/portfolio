@@ -12,9 +12,9 @@
 var _ = require('lodash');
 var Config = require('./config.model');
 
-// Get list of config
+// Get first config
 exports.index = function(req, res) {
-  Config.find(function (err, config) {
+  Config.findOne(function (err, config) {
     if(err) { return handleError(res, err); }
     return res.json(200, config);
   });
@@ -43,7 +43,7 @@ exports.update = function(req, res) {
   Config.findById(req.params.id, function (err, config) {
     if (err) { return handleError(res, err); }
     if(!config) { return res.send(404); }
-    var updated = _.configrge(config, req.body);
+    var updated = _.extend(config, req.body);
     updated.save(function (err) {
       if (err) { return handleError(res, err); }
       return res.json(200, config);

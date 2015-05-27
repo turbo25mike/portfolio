@@ -1,20 +1,20 @@
 'use strict';
 
 angular.module('portfolioApp')
-  .controller('NavbarCtrl', function ($scope, $location, Auth, configService) {
+  .controller('NavbarCtrl', function ($location, Auth, configService) {
     var vm = this;
     vm.config = configService.get();
-    $scope.isCollapsed = true;
-    $scope.isLoggedIn = Auth.isLoggedIn;
-    $scope.isAdmin = Auth.isAdmin;
-    $scope.getCurrentUser = Auth.getCurrentUser;
+    vm.isCollapsed = true;
+    vm.isLoggedIn = Auth.isLoggedIn;
+    vm.isAdmin = Auth.isAdmin;
+    vm.getCurrentUser = Auth.getCurrentUser;
 
-    $scope.logout = function() {
+    vm.logout = function() {
       Auth.logout();
       $location.path('/login');
     };
 
-    $scope.isActive = function(route) {
+    vm.isActive = function(route) {
       return route === $location.path();
     };
   });

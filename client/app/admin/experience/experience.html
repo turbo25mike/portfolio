@@ -1,0 +1,127 @@
+<div class="progress-wrapper" ng-hide="vm.experienceLoaded">
+    <small>loading...</small>
+    <div class="progress" style="width: 200px; height: 5px;">
+        <div class="progress-bar progress-bar-striped active" role="progressbar" style="width: 100%">
+            <span class="sr-only">loading...</span>
+        </div>
+    </div>
+</div>
+
+<div class="page-wrapper" ng-show="vm.experienceLoaded">
+    <div class="row">
+        <div class="col-md-9">
+            <h2>Home Page Info</h2>
+            <form class="form" name="form" ng-submit="save(form)" novalidate>
+
+                <div class="form-group">
+                    <label>Title</label>
+                    <input type="text" name="name" class="form-control" ng-model="vm.experience.name" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Description</label>
+                    <textarea rows="5" name="info" class="form-control" ng-model="vm.experience.info" required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>Style</label>
+                    <input type="text" name="style" class="form-control" ng-model="vm.experience.style">
+                </div>
+
+                <div class="form-group">
+                    <label>Link</label>
+                    <input type="url" name="link" class="form-control" ng-model="vm.experience.link">
+                </div>
+
+                <div class="form-group">
+                    <label>Year</label>
+                    <input type="text" name="date" class="form-control" ng-model="vm.experience.date">
+                </div>
+
+                <div class="form-group has-error">
+                    <p class="help-block" ng-show="form.name.$error.name && submitted">
+                        Please enter a valid title.
+                    </p>
+                    <p class="help-block" ng-show="form.info.$error.info && submitted">
+                        Please enter a valid description.
+                    </p>
+                </div>
+
+                <button class="btn btn-primary btn-lg" type="submit">
+                    Save
+                </button>
+                <a class="btn btn-default btn-lg" href="/">
+            Cancel
+          </a>
+            </form>
+        </div>
+        <div class="col-md-3">
+            <h2>Homepage Picture</h2>
+            <img class="img-thumbnail" style="width:100%;" ng-src="http://res.cloudinary.com/{{vm.appSettings.cloudinaryName}}/image/upload/{{(vm.experience.image.transformations) ? vm.experience.image.transformations + '/': ''}}{{vm.experience.image.id}}.{{vm.experience.image.format}}" />
+            <div class="form-group">
+                <label><a href="http://cloudinary.com/documentation/image_transformations#reference" target="_blank">Image Transformations</a> <small>(comma seperated)</small>
+                </label>
+                <input type="text" class="form-control" ng-model="vm.experience.image.transformations" />
+
+            </div>
+            <div class="well well-sm">
+                <button type="button" class="btn btn-default" ngf-select ng-model="vm.files">Upload</button>
+                <div ngf-drop ng-model="vm.files" class="drop-box" ngf-drag-over-class="dragover" ngf-multiple="false" ngf-allow-dir="true" ngf-accept="'.jpg,.png'">Drag/Drop Images here</div>
+                <div ngf-no-file-drop>File Drag/Drop is not supported for this browser</div>
+                <div ng-show="vm.files">
+                    preview:
+                    <p ng-repeat="image in vm.files" ng-show="image.progress < 100">
+                        <img ng-show="image.type.indexOf('image') > -1" ngf-src="image" ngf-default-src="assets/images/image_placeholder.png" style="width:100%;" ngf-accept="image">
+                        <video ng-show="image.type.indexOf('video') > -1" controls ngf-src="image" style="width:100%;" ngf-accept="video"></video>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr />
+    <div class="row">
+        <div class="col-md-9">
+            <h2>Experience Page Layout</h2>
+            <div style="padding:5px; margin:5px; width:400px; border: solid 1px lightGray" ng-repeat="item in vm.experience.experienceItems | orderBy:'order'">
+                
+                <textarea ng-show="item.kind === 'text'" rows="5" class="form-control" ng-model="item.info"></textarea>
+                <img ng-show="item.kind === 'image'" class="img-thumbnail" ng-src="http://res.cloudinary.com/{{vm.appSettings.cloudinaryName}}/image/upload/{{(item.transformations) ? item.transformations + '/': ''}}{{item.id}}.{{item.format}}" />
+
+                <div ng-show="item.kind === 'image'" class="form-group">
+                    <label><a href="http://cloudinary.com/documentation/image_transformations#reference" target="_blank">Image Transformations</a> <small>(comma seperated)</small>
+                    </label>
+                    <input type="text" class="form-control" ng-model="item.transformations" />
+                </div>
+                <div class="form-group">
+                    <label>Order</label>
+                    <button type="button" ng-click="vm.move(item.order, 'up')" ng-hide="$first" class="btn btn-xs btn-default"><i class="glyphicon glyphicon-arrow-up"></i>
+                    </button>
+                    <button type="button" ng-click="vm.move(item.order, 'down')" ng-hide="$last" class="btn btn-xs btn-default"><i class="glyphicon glyphicon-arrow-down"></i>
+                    </button>
+                </div>
+                <button type="button" ng-click="vm.delete(item)" class="btn btn-xs btn-default">Delete</button>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="well well-sm">
+                <button type="button" class="btn btn-default" ngf-select ng-model="vm.expfiles">Upload Image</button>
+                <div ngf-drop ng-model="vm.expfiles" class="drop-box" ngf-drag-over-class="dragover" ngf-multiple="true" ngf-allow-dir="true" ngf-accept="'.jpg,.png'">Drag/Drop Images here</div>
+                <div ngf-no-file-drop>File Drag/Drop is not supported for this browser</div>
+                <div ng-show="vm.files">
+                    preview:
+                    <p ng-repeat="image in vm.expfiles" ng-show="image.progress < 100">
+                        <img ng-show="image.type.indexOf('image') > -1" ngf-src="image" ngf-default-src="assets/images/image_placeholder.png" style="width:100%;" ngf-accept="image">
+                        <video ng-show="image.type.indexOf('video') > -1" controls ngf-src="image" style="width:100%;" ngf-accept="video"></video>
+                    </p>
+                </div>
+
+                <div class="form-group">
+                    <label>Description</label>
+                    <textarea rows="5" name="info" class="form-control" ng-model="newExperienceText"></textarea>
+                    <button type="button" class="btn btn-xs btn-default">Add</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

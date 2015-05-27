@@ -1,0 +1,65 @@
+.brand-lg {
+    border: 2px solid Gainsboro;
+    height: 40px;
+    margin-top: 5px;
+    .brand {
+        float: left;
+        padding: 15px 15px;
+        font-size: 18px;
+        line-height: 20px;
+        height: 50px;
+        font-weight: 300;
+        font-size: 16px;
+        letter-spacing: 3px;
+        margin: 0px;
+        padding: 10px;
+        color: darkGray;
+    }
+}
+
+.brand-sm {
+    border: 2px solid Gainsboro;
+    height: 40px;
+    width: 35px;
+    margin-top: 5px;
+    .brand {
+        float: left;
+        padding: 15px 15px;
+        font-size: 18px;
+        line-height: 20px;
+        height: 50px;
+        font-weight: 300;
+        font-size: 16px;
+        letter-spacing: 3px;
+        margin: 0px;
+        padding: 10px;
+        color: darkGray;
+    }
+}
+
+.nav-rt-bck {
+    margin-right: 50px;
+    background: -moz-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(229, 229, 229, 0) 100%);
+    /* FF3.6+ */
+    
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(255, 255, 255, 1)), color-stop(100%, rgba(229, 229, 229, 0)));
+    /* Chrome,Safari4+ */
+    
+    background: -webkit-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(229, 229, 229, 0) 100%);
+    /* Chrome10+,Safari5.1+ */
+    
+    background: -o-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(229, 229, 229, 0) 100%);
+    /* Opera 11.10+ */
+    
+    background: -ms-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(229, 229, 229, 0) 100%);
+    /* IE10+ */
+    
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 0%, rgba(229, 229, 229, 0) 100%);
+    /* W3C */
+}
+
+@media (max-width: $screen-sm) {
+    .nav-rt-bck {
+        background: white;
+    }
+}

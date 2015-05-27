@@ -9,7 +9,8 @@
 
 <section ng-repeat="item in vm.workItems" class="work-item" style="{{item.style}}" repeat-complete="vm.sectionsLoaded()">
     <div class="work-item-date">{{item.date}}</div>
-    <div class="work-item-header" ng-click="vm.showExperience(item)">{{item.name}}</div>
+    <div class="work-item-header" ng-click="vm.showExperience(item)">{{item.name}} <a href="/admin/experience/{{item._id}}" class="btn btn-default btn-xs" ng-show="vm.isAdmin()"><i class="glyphicon glyphicon-pencil"></i></a></div>
+    <div class="work-click"><i class="glyphicon glyphicon-asterisk"></i> click to see</div>
     <div class="work-item-main-img" ng-click="vm.showExperience(item)">
         <img ng-src="http://res.cloudinary.com/{{vm.appSettings.cloudinaryName}}/image/upload/{{(item.image.transformations) ? item.image.transformations + '/': ''}}{{item.image.id}}.{{item.image.format}}" />
     </div>
