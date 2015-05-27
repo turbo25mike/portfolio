@@ -41,6 +41,7 @@ Work.find({}).remove(function () {
         style: 'overflow:hidden; color:black',
         link: 'http://google.com',
         date: '2015',
+        order: 1,
         image: {
             id: 'sample',
             format: 'jpg'
@@ -57,6 +58,7 @@ Work.find({}).remove(function () {
         style: 'overflow:hidden; background-color:Gainsboro; color: white;',
         link: 'http://google.com',
         date: '2015',
+        order: 2,
         image: {
             id: 'sample',
             format: 'jpg'

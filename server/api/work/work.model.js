@@ -9,6 +9,7 @@ var WorkSchema = new Schema({
     style: String,
     link: String,
     date: String,
+    order: Number,
     image: {
         id: String,
         format: String,

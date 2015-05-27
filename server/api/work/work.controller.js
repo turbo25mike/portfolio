@@ -14,7 +14,7 @@ var Work = require('./work.model');
 
 // Get list of works
 exports.index = function (req, res) {
-    Work.find(function (err, works) {
+    Work.find.sort('experienceItems.order').exec(function (err, works) {
         if (err) {
             return handleError(res, err);
         }
@@ -24,7 +24,7 @@ exports.index = function (req, res) {
 
 // Get a single work
 exports.show = function (req, res) {
-    Work.findById(req.params.id, function (err, work) {
+    Work.findById(req.params.id).sort('experienceItems.order').exec(function (err, work) {
         if (err) {
             return handleError(res, err);
         }
