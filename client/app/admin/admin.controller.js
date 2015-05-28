@@ -28,7 +28,9 @@ angular.module('portfolioApp')
                     _id: vm.config._id,
                     name: form.name.$modelValue,
                     contactEmailAddress: form.contactEmailAddress.$modelValue,
-                    about: form.about.$modelValue
+                    about: form.about.$modelValue,
+                    linkedInAddress: form.linkedInAddress.$modelValue,
+                    githubAddress: form.githubAddress.$modelValue
                 };
 
                 if (vm.config._id) {

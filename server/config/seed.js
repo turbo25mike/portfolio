@@ -14,7 +14,9 @@ Config.find({}).remove(function () {
     Config.create({
         name: 'JEFFJOHNSON',
         about: 'A short little bio.',
-        contactEmailAddress: 'test@test.com'
+        contactEmailAddress: 'test@test.com',
+        linkedInAddress: 'http://linkedin.com',
+        githubAddress: 'http://github.com'
     });
 });
 

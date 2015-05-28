@@ -5,14 +5,18 @@ angular.module('portfolioApp')
         var vm = this;
         vm.isAdmin = Auth.isAdmin;
         vm.appSettings = appSettings;
-
+        vm.toyLoaded = false;
+    
         if ($routeParams.id === 'new') {
+            vm.toyLoaded = true;
             vm.toy = {
                 images: []
             };
         } else {
             vm.toy = toolService.get({
                 id: $routeParams.id
+            }, function () {
+                vm.toyLoaded = true
             });
         }
 
@@ -54,7 +58,7 @@ angular.module('portfolioApp')
         $scope.save = function (form) {
 
             vm.submitted = true;
-            
+
             if (form.$valid && Auth.isAdmin()) {
 
                 var saveData = {
