@@ -15,37 +15,4 @@
         <h2>{{toy.name}} <a href="/admin/toy/{{toy._id}}" class="btn btn-default btn-xs" ng-show="vm.isAdmin()"><i class="glyphicon glyphicon-pencil"></i></a></h2> 
         <img style="margin-right:5px;" ng-repeat="image in toy.images" ng-src="http://res.cloudinary.com/{{vm.appSettings.cloudinaryName}}/image/upload/{{(image.transformations) ? image.transformations + '/': ''}}{{image.id}}.{{image.format}}" />
     </div>
-
-    <!--
-    <h2>SASS Solutions</h2>
-    <img src="assets/images/yeoman-logo.png" height="80px" alt="I'm Yeoman" />
-        <img src="assets/images/angular-logo.png" height="70px" style="margin-bottom:10px;" alt="Github" />
-        <img src="assets/images/bootstrap-logo.png" height="70px" style="margin-bottom:10px;" alt="Github" />
-        <img src="assets/images/sass-logo.png" height="70px" style="margin-bottom:10px;" alt="Github" />
-    <img src="assets/images/cloudinary-logo.png" height="70px" style="margin-bottom:10px;" alt="Github" />
-
-
-    <h2>Databases</h2>
-    <img src="assets/images/mongo-logo.png" height="70px" style="margin-bottom:10px;" alt="Github" />
-    <img src="assets/images/sql-logo.png" height="70px" style="margin-bottom:10px;" alt="Github" />
-
-    <h2>Servers/Services (REST)</h2>
-    <img src="assets/images/csharp-logo.png" height="70px" style="margin-bottom:10px;" alt="Github" />
-    <img src="assets/images/node-logo.png" height="70px" style="margin-bottom:10px;" alt="Github" />
-    <img src="assets/images/heroku-logo.png" height="70px" style="margin-bottom:10px;" alt="Github" />
-
-
-    <h2>Continuacy Integration</h2>
-    <img src="assets/images/bower-logo.png" height="70px" style="margin-bottom:10px;" alt="Bower" />
-    <img src="assets/images/teamcity-logo.png" height="70px" style="margin-bottom:10px;" alt="Bower" />
-    <img src="assets/images/grunt-logo.png" height="70px" style="margin-bottom:10px;" alt="Github" />
-    <img src="assets/images/gulp-logo.png" height="70px" style="margin-bottom:10px;" alt="Github" />
-
-    <h2>Collaboration Tools</h2>
-    <img src="assets/images/git-logo.png" height="70px" style="margin-bottom:10px;" alt="Github" />
-
-    <h2>Design Tools</h2>
-    <img src="assets/images/illustrator-logo.png" height="70px" style="margin-bottom:10px;" alt="Github" />
-    <img src="assets/images/photoshop-logo.png" height="70px" style="margin-bottom:10px;" alt="Github" />
--->
 </div>
