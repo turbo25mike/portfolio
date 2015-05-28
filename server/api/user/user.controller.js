@@ -22,6 +22,7 @@ exports.index = function (req, res) {
 
 /**
  * Creates a new user
+ * If no users have been created then the first user will be an admin
  */
 exports.create = function (req, res, next) {
     User.findOne(function (err, firstUser) {
