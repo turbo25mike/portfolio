@@ -4,16 +4,16 @@
 
 ## System Requirements
 
-- [Yeoman](http://yeoman.io)[![image](yeoman-logo.png =70x)](http://yeoman.io)
-- [Angular-fullstack](https://github.com/DaftMonk/generator-angular-fullstack)[![image](yeoman-logo.png =70x)](https://github.com/DaftMonk/generator-angular-fullstack)
-- [Grunt](http://yeoman.io)[![image](grunt-logo.png =70x)](http://gruntjs.com)
-- [Bower](http://bower.io)[![image](bower-logo.png =70x)](http://bower.io)
-- [Sass](http://sass-lang.com/)[![image](sass-logo.png =70x)](http://sass-lang.com/)
+- <img src="yeoman-logo.png" width="70px" height="70px">[Yeoman](http://yeoman.io)
+- <img src="yeoman-logo.png" width="70px" height="70px">[Angular-fullstack](https://github.com/DaftMonk/generator-angular-fullstack)
+- <img src="grunt-logo.png" width="70px" height="70px">[Grunt](http://yeoman.io)
+- <img src="bower-logo.png" width="70px" height="70px">[Bower](http://bower.io)
+- <img src="sass-logo.png" width="70px" height="70px">[Sass](http://sass-lang.com/)
 
 ## Built-in SASS Solutions
 
-- [Cloudinary](http://yeoman.io)[![image](cloudinary-logo.png =70x)](http://yeoman.io)
-- [Google Analytics](http://www.google.com/analytics)[![image](google-analytics-logo.png =70x)](http://www.google.com/analytics)
+- <img src="cloudinary-logo.png" width="70px" height="70px">[Cloudinary](http://yeoman.io)
+- <img src="google-analytics-logo.png" width="70px" height="70px">[Google Analytics](http://www.google.com/analytics)
 
 ## Support
 
