@@ -16,6 +16,8 @@
             </div>
         </div>
         <div collapse="isCollapsed" class="navbar-collapse collapse" id="navbar-main">
+            <a href="{{vm.config.linkedInAddress}}" ng-show="vm.config.linkedInAddress" style="font-size:2em; color:#1a84bc; margin-left:3px;"><i class="fa fa-linkedin-square"></i></a>
+            <a href="{{vm.config.githubAddress}}" ng-show="vm.config.githubAddress" style="font-size:2em; color:#1a84bc; margin-left:3px;"><i class="fa fa-github-square"></i></a>
             <ul class="nav navbar-nav">
                 <li ng-show="vm.isAdmin()" ng-class="{active: vm.isActive('/admin')}"><a href="/admin">Admin</a>
                 </li>
