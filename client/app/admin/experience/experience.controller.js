@@ -6,6 +6,7 @@ angular.module('portfolioApp')
         vm.isAdmin = Auth.isAdmin;
         vm.appSettings = appSettings;
         vm.experienceLoaded = false;
+        vm.submitted = false;
 
         if ($routeParams.id === 'new') {
             vm.experienceLoaded = true;
@@ -26,8 +27,8 @@ angular.module('portfolioApp')
         } else {
             vm.experience = workService.get({
                 id: $routeParams.id
-            }, function(){
-             vm.experienceLoaded = true
+            }, function () {
+                vm.experienceLoaded = true
             });
         }
 
@@ -84,6 +85,7 @@ angular.module('portfolioApp')
                         vm.experience.experienceItems.push({
                             id: data.public_id,
                             format: data.format,
+                            kind: 'image',
                             order: vm.experience.experienceItems.length || 0,
                             transformations: ''
                         });
@@ -95,8 +97,20 @@ angular.module('portfolioApp')
             });
         });
 
-        $scope.save = function (form) {
+        vm.addNewExperienceText = function(newText) {
+            if (newText) {
+                vm.experience.experienceItems.push({
+                    info: newText,
+                    kind: 'text',
+                    order: vm.experience.experienceItems.length || 0
+                });
+            } else {
+                toastr.error('No text found');
+            }
+        }
 
+        vm.save = function (form) {
+            vm.submitted = true;
             if (form.$valid && Auth.isAdmin()) {
 
                 var saveData = {

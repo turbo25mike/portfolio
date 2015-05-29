@@ -1,4 +1,5 @@
-<a href="https://github.com/turbo25mike/portfolio" class="hidden-xs" target="_blank"><img style="position: fixed; z-index:99999; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>
+<a href="https://github.com/turbo25mike/portfolio" class="hidden-xs" target="_blank"><img style="position: fixed; z-index:99999; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png">
+</a>
 <div class="header navbar navbar-default" ng-controller="NavbarCtrl as vm" style="background:none; border:none;">
     <div class="container-fluid">
         <div class="navbar-header">
@@ -14,23 +15,24 @@
             <div class="visible-xs brand-sm">
                 <a href="/" class="brand">{{vm.config.name.charAt(0)}}.</a>
             </div>
+            <div class="contact-wrapper">
+                <a href="mailto://{{vm.config.contactEmailAddress}}" title="Send an email" ng-show="vm.config.contactEmailAddress" class="contact-item"><i class="fa fa-envelope-square"></i></a>
+                <a href="{{vm.config.linkedInAddress}}" title="Get in touch via LinkedIn" ng-show="vm.config.linkedInAddress" class="contact-item"><i class="fa fa-linkedin-square"></i></a>
+                <a href="{{vm.config.githubAddress}}" title="Check out some of my work via Github" ng-show="vm.config.githubAddress" class="contact-item"><i class="fa fa-github-square"></i></a>
+            </div>
+
         </div>
         <div collapse="isCollapsed" class="navbar-collapse collapse" id="navbar-main">
-            <a href="{{vm.config.linkedInAddress}}" ng-show="vm.config.linkedInAddress" style="font-size:2em; color:#1a84bc; margin-left:3px;"><i class="fa fa-linkedin-square"></i></a>
-            <a href="{{vm.config.githubAddress}}" ng-show="vm.config.githubAddress" style="font-size:2em; color:#1a84bc; margin-left:3px;"><i class="fa fa-github-square"></i></a>
-            <ul class="nav navbar-nav">
+            <ul class="nav navbar-nav navbar-right nav-rt-bck">
                 <li ng-show="vm.isAdmin()" ng-class="{active: vm.isActive('/admin')}"><a href="/admin">Admin</a>
                 </li>
-            </ul>
-            <ul class="nav navbar-nav navbar-right nav-rt-bck" >
                 <li ng-class="{active: vm.isActive('/')}"><a href="/">Experience</a>
                 </li>
-                <li title="Add Experience" ng-show="vm.isAdmin()"><a href="/admin/experience/new"><i class="glyphicon glyphicon-plus"></i></a></li>
+                <li title="Add Experience" ng-show="vm.isAdmin()"><a href="/admin/experience/new"><i class="glyphicon glyphicon-plus"></i></a>
+                </li>
                 <li ng-class="{active: vm.isActive('/toys')}"><a href="/toys">Toys</a>
                 </li>
                 <li ng-class="{active: vm.isActive('/me')}"><a href="/me">Me</a>
-                </li>
-                <li><a href="mailto://{{vm.config.contactEmailAddress}}">Contact</a>
                 </li>
                 <!--<li ng-hide="isLoggedIn()" ng-class="{active: isActive('/signup')}"><a href="/signup">Sign up</a>
                 </li>

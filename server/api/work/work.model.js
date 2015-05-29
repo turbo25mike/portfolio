@@ -20,6 +20,7 @@ var WorkSchema = new Schema({
         id: String,
         info: String,
         format: String,
+        style: String,
         transformations: String,
         order: Number
         }]

@@ -36,6 +36,8 @@ Tool.find({}).remove(function () {
     });
 });
 
+Work.find({}).remove(function () {});
+/*
 Work.find({}).remove(function () {
     Work.create({
         name: 'Development Tools',
@@ -81,7 +83,7 @@ Work.find({}).remove(function () {
             format: 'jpg'
         }]
     });
-});
+});*/
 
 User.find({}).remove(function () {
     User.create({

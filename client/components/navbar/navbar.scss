@@ -1,4 +1,5 @@
 .brand-lg {
+    float: left;
     border: 2px solid Gainsboro;
     height: 40px;
     margin-top: 5px;
@@ -18,6 +19,7 @@
 }
 
 .brand-sm {
+    float: left;
     border: 2px solid Gainsboro;
     height: 40px;
     width: 35px;
@@ -34,6 +36,15 @@
         margin: 0px;
         padding: 10px;
         color: darkGray;
+    }
+}
+
+.contact-wrapper {
+    float: left;
+    .contact-item {
+        font-size: 2em;
+        color: #1a84bc;
+        margin-left: 3px;
     }
 }
 

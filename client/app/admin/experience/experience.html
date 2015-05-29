@@ -11,7 +11,7 @@
     <div class="row">
         <div class="col-md-9">
             <h2>Home Page Info</h2>
-            <form class="form" name="form" ng-submit="save(form)" novalidate>
+            <form class="form" name="form" ng-submit="vm.save(form)" novalidate>
 
                 <div class="form-group">
                     <label>Title</label>
@@ -39,10 +39,10 @@
                 </div>
 
                 <div class="form-group has-error">
-                    <p class="help-block" ng-show="form.name.$error.name && submitted">
+                    <p class="help-block" ng-show="form.name.$error.required && vm.submitted">
                         Please enter a valid title.
                     </p>
-                    <p class="help-block" ng-show="form.info.$error.info && submitted">
+                    <p class="help-block" ng-show="form.info.$error.required && vm.submitted">
                         Please enter a valid description.
                     </p>
                 </div>
@@ -93,6 +93,10 @@
                     <input type="text" class="form-control" ng-model="item.transformations" />
                 </div>
                 <div class="form-group">
+                    <label>Style</label>
+                    <input type="text" class="form-control" ng-model="item.style" />
+                </div>
+                <div class="form-group">
                     <label>Order</label>
                     <button type="button" ng-click="vm.move(item.order, 'up')" ng-hide="$first" class="btn btn-xs btn-default"><i class="glyphicon glyphicon-arrow-up"></i>
                     </button>
@@ -118,7 +122,7 @@
                 <div class="form-group">
                     <label>Description</label>
                     <textarea rows="5" name="info" class="form-control" ng-model="newExperienceText"></textarea>
-                    <button type="button" class="btn btn-xs btn-default">Add</button>
+                    <button type="button" class="btn btn-xs btn-default" ng-click="vm.addNewExperienceText(newExperienceText)">Add</button>
                 </div>
             </div>
         </div>

@@ -1,8 +1,8 @@
-<div class="page-wrapper">
-    <article style="opacity:0; position:relative; top:60px;" ng-repeat="item in vm.item.experienceItems | orderBy: 'order'" style="{{item.style}}"  repeat-complete="vm.sectionsLoaded()">
+<div style="margin-top:50px; overflow-x:hidden;">
+    <div class="appear-item" style="opacity:0;" ng-repeat="item in vm.item.experienceItems | orderBy: 'order'" style="{{item.style}}" repeat-complete="vm.sectionsLoaded()">
         <img ng-show="item.kind === 'image'" ng-src="http://res.cloudinary.com/{{vm.appSettings.cloudinaryName}}/image/upload/{{(item.transformations) ? item.transformations + '/': ''}}{{item.id}}.{{item.format}}" />
         <div ng-show="item.kind === 'text'" class="font-exlg">{{item.info}}</div>
-    </article>
+    </div>
 </div>
 
 <div class="progress-wrapper" ng-hide="vm.item.$resolved">

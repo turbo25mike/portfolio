@@ -16,7 +16,7 @@ angular.module('portfolioApp')
 
         function appear() {
             /* Check the location of each desired element */
-            var articles = angular.element('article')
+            var articles = angular.element(document.getElementsByClassName('appear-item'));
             angular.forEach(articles, function (i, index) {
 
                 var bottom_of_object = i.offsetTop + i.offsetHeight;
