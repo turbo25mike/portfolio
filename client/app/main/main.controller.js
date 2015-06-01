@@ -15,8 +15,4 @@ angular.module('portfolioApp')
         vm.sectionsLoaded = function () {
             onepageUtil.setup();
         };
-
-        vm.showExperience = function (item) {
-            $location.path("/experience/" + item._id);
-        };
     });

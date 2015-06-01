@@ -37,10 +37,10 @@ Tool.find({}).remove(function () {
 });
 
 Work.find({}).remove(function () {});
-/*
+
 Work.find({}).remove(function () {
     Work.create({
-        name: 'Development Tools',
+        name: 'Development',
         info: 'Integration with popular tools such as Bower, Grunt, Karma, Mocha, JSHint, Node Inspector, Livereload, Protractor, Jade, Stylus, Sass, CoffeeScript, and Less.',
         style: 'overflow:hidden; color:black',
         link: 'http://google.com',
@@ -54,10 +54,11 @@ Work.find({}).remove(function () {
             kind: 'image',
             id: 'sample',
             order: 1,
-            format: 'jpg'
+            format: 'jpg',
+            style: ''
         }]
     }, {
-        name: 'Server and Client integration',
+        name: 'Integration',
         info: 'Built with a powerful and fun stack: MongoDB, Express, AngularJS, and Node.',
         style: 'overflow:hidden; background-color:Gainsboro; color: white;',
         link: 'http://google.com',
@@ -71,19 +72,22 @@ Work.find({}).remove(function () {
             kind: 'image',
             id: 'sample',
             order: 1,
-            format: 'jpg'
+            format: 'jpg',
+            style: 'height:500px; width:100%;'
         }, {
             kind: 'text',
             info: 'Well hello there!',
-            order: 2
+            order: 2,
+            style: 'color:red;'
         }, {
             kind: 'image',
             id: 'sample',
             order: 3,
-            format: 'jpg'
+            format: 'jpg',
+            style: 'height:200px; width:100%;'
         }]
     });
-});*/
+});
 
 User.find({}).remove(function () {
     User.create({

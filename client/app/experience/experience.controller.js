@@ -19,10 +19,10 @@ angular.module('portfolioApp')
             var articles = angular.element(document.getElementsByClassName('appear-item'));
             angular.forEach(articles, function (i, index) {
 
-                var bottom_of_object = i.offsetTop + i.offsetHeight;
+                var bottom_of_object = i.offsetTop + (i.offsetHeight / 3);
                 var bottom_of_window = $window.pageYOffset + $window.innerHeight;
 
-                /* If the object is completely visible in the window, fade it it */
+                /* If the object is partially visible in the window, fade it in */
                 if (bottom_of_window > bottom_of_object || index === 0) {
 
                     $(i).animate({
