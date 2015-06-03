@@ -1,5 +1,5 @@
 <div style="margin-top:50px; overflow-x:hidden;">
-    <div class="appear-item" style="opacity:0;" ng-repeat="item in vm.item.experienceItems | orderBy: 'order'" style="{{item.style}}" repeat-complete="vm.sectionsLoaded()">
+    <div class="appear-item" style="opacity:0;" ng-repeat="item in vm.item.experienceItems | orderBy: 'order'" repeat-complete="vm.sectionsLoaded()">       
         <div class="experience-img" ng-show="item.kind === 'image'" style="background-image:url(http://res.cloudinary.com/{{vm.appSettings.cloudinaryName}}/image/upload/{{(item.transformations) ? item.transformations + '/': ''}}{{item.id}}.{{item.format}}); {{item.style}}" ></div>
         <div ng-show="item.kind === 'text'" class="font-exlg" style="{{item.style}}">{{item.info}}</div>
     </div>

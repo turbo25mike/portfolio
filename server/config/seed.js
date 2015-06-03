@@ -56,8 +56,7 @@ Work.find({}).remove(function () {
             id: 'sample',
             order: 1,
             format: 'jpg',
-            transformations: 'h_100',  
-            style: ''
+            style: 'height:500px; width:100%;'
         }]
     }, {
         name: 'Integration',
