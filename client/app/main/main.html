@@ -1,5 +1,5 @@
 <div class="progress-wrapper" ng-hide="vm.workItems.$resolved">
-    Welcome!  Looks like we're still fetching things, hold on this shouldn't take long.
+    Welcome! Looks like we're still fetching things, hold on this shouldn't take long.
     <div class="progress" style="width: 200px; height: 5px;">
         <div class="progress-bar progress-bar-striped active" role="progressbar" style="width: 100%">
             <span class="sr-only">loading...</span>
@@ -9,9 +9,7 @@
 
 <section ng-repeat="item in vm.workItems" class="work-item" style="{{item.style}}" repeat-complete="vm.sectionsLoaded()">
     <div class="work-item-date">{{item.date}}</div>
-    <div class="work-item-header" ng-click="vm.showExperience(item)">{{item.name}} <a href="/admin/experience/{{item._id}}" class="btn btn-default btn-xs" ng-show="vm.isAdmin()"><i class="glyphicon glyphicon-pencil"></i></a></div>
-    <div class="work-click"><i class="glyphicon glyphicon-asterisk"></i> click to see</div>
-    <div class="work-item-main-img" ng-click="vm.showExperience(item)">
-        <img ng-src="http://res.cloudinary.com/{{vm.appSettings.cloudinaryName}}/image/upload/{{(item.image.transformations) ? item.image.transformations + '/': ''}}{{item.image.id}}.{{item.image.format}}" />
+    <div class="work-item-header" ng-click="vm.showExperience(item)">{{item.name}}</a> <a href="/admin/experience/{{item._id}}" class="btn btn-default btn-xs" ng-show="vm.isAdmin()"><i class="glyphicon glyphicon-pencil"></i></a>
     </div>
+    <a class="work-item-main-img" href="/experience/{{item._id}}" style="background-image: url(http://res.cloudinary.com/{{vm.appSettings.cloudinaryName}}/image/upload/{{(item.image.transformations) ? item.image.transformations + '/': ''}}{{item.image.id}}.{{item.image.format}});"></a>
 </section>

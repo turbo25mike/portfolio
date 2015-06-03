@@ -63,7 +63,7 @@ a {
 @media (max-width: $screen-sm) {
     .page-wrapper {
         
-    margin: 45px 5px 5px 5px;
+    margin: 60px 5px 5px 5px;
         
 }
     
@@ -78,7 +78,9 @@ a {
 @import 'admin/admin.scss';
 @import 'admin/experience/experience.scss';
 @import 'admin/toy/toy.scss';
+@import 'experience/experience.scss';
 @import 'main/main.scss';
+@import 'toys/toys.scss';
 @import 'modal/modal.scss';
 @import 'navbar/navbar.scss';
 // endinjector

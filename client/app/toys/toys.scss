@@ -1,0 +1,9 @@
+.toys-header {
+     text-align: center;
+    }
+
+@media (max-width: $screen-sm) {
+    .toys-header {
+        font-size: 1.5em;
+    }
+}
