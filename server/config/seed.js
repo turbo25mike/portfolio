@@ -36,8 +36,8 @@ Tool.find({}).remove(function () {
     });
 });
 
-Work.find({}).remove(function () {});
-/*
+/*Work.find({}).remove(function () {});*/
+
 Work.find({}).remove(function () {
     Work.create({
         name: 'Development Tools',
@@ -54,7 +54,8 @@ Work.find({}).remove(function () {
             kind: 'image',
             id: 'sample',
             order: 1,
-            format: 'jpg'
+            format: 'jpg',
+            transformations: 'h_100'    
         }]
     }, {
         name: 'Server and Client integration',
@@ -83,7 +84,7 @@ Work.find({}).remove(function () {
             format: 'jpg'
         }]
     });
-});*/
+});
 
 User.find({}).remove(function () {
     User.create({

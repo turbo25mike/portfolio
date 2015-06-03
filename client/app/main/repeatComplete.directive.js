@@ -48,7 +48,6 @@ angular.module('portfolioApp').directive("repeatComplete", function ($rootScope)
         var unbindWatcher = parentScope.$watch(
             function () {
 
-                console.info("Digest running.");
 
                 // Now that we're in a digest, check to see
                 // if there are any ngRepeat items being
