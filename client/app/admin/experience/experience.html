@@ -22,6 +22,11 @@
                     <label>Description</label>
                     <textarea rows="5" name="info" class="form-control" ng-model="vm.experience.info" required></textarea>
                 </div>
+                
+                <div class="form-group">
+                    <label>Order</label>
+                    <input type="number" name="order" class="form-control" ng-model="vm.experience.order">
+                </div>
 
                 <div class="form-group">
                     <label>Style</label>
@@ -98,6 +103,7 @@
                 </div>
                 <div class="form-group">
                     <label>Order</label>
+                    <input type="number" class="form-control" ng-model="item.order">
                     <button type="button" ng-click="vm.move(item.order, 'up')" ng-hide="$first" class="btn btn-xs btn-default"><i class="glyphicon glyphicon-arrow-up"></i>
                     </button>
                     <button type="button" ng-click="vm.move(item.order, 'down')" ng-hide="$last" class="btn btn-xs btn-default"><i class="glyphicon glyphicon-arrow-down"></i>

@@ -7,9 +7,8 @@
     </div>
 </div>
 
-<section ng-repeat="item in vm.workItems" class="work-item" style="{{item.style}}" repeat-complete="vm.sectionsLoaded()">
-    <div class="work-item-date">{{item.date}}</div>
-    <div class="work-item-header" ng-click="vm.showExperience(item)">{{item.name}}</a> <a href="/admin/experience/{{item._id}}" class="btn btn-default btn-xs" ng-show="vm.isAdmin()"><i class="glyphicon glyphicon-pencil"></i></a>
-    </div>
+<section ng-repeat="item in vm.workItems | orderBy: 'order'" class="work-item" style="{{item.style}}" repeat-complete="vm.sectionsLoaded()">
+    <div class="work-item-date">{{item.date}} <a href="/admin/experience/{{item._id}}" class="btn btn-default btn-xs" ng-show="vm.isAdmin()"><i class="glyphicon glyphicon-pencil"></i></a></div>
+    <div class="work-item-header">{{item.name}}</div>
     <a class="work-item-main-img" href="/experience/{{item._id}}" style="background-image: url(http://res.cloudinary.com/{{vm.appSettings.cloudinaryName}}/image/upload/{{(item.image.transformations) ? item.image.transformations + '/': ''}}{{item.image.id}}.{{item.image.format}});"></a>
 </section>

@@ -116,6 +116,7 @@ angular.module('portfolioApp')
                 var saveData = {
                     _id: vm.experience._id,
                     name: form.name.$modelValue,
+                    order: form.order.$modelValue,
                     info: form.info.$modelValue,
                     style: form.style.$modelValue,
                     link: form.link.$modelValue,
