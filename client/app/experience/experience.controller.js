@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('portfolioApp')
-    .controller('ExperienceController', function ($scope, $window, workService, Auth, appSettings, $routeParams, onepageUtil) {
+    .controller('ExperienceController', function ($scope, $window, workService, Auth, appSettings, $routeParams, onepageUtil, $timeout) {
         var vm = this;
         vm.appSettings = appSettings;
         vm.isAdmin = Auth.isAdmin;
@@ -20,7 +20,7 @@ angular.module('portfolioApp')
             angular.forEach(articles, function (i, index) {
 
                 var bottom_of_object = i.offsetTop + (i.offsetHeight / 3);
-                var bottom_of_window = $window.pageYOffset + $window.innerHeight;
+                var bottom_of_window = $window.pageYOffset + $window.innerHeight - 500;
 
                 /* If the object is partially visible in the window, fade it in */
                 if (bottom_of_window > bottom_of_object || index === 0) {
@@ -38,4 +38,8 @@ angular.module('portfolioApp')
         $(window).scroll(function () {
             appear();
         });
+    
+        $timeout(function(){
+            $scope.startFade = true;
+        }, 2000);
     });

@@ -27,6 +27,28 @@ body {
     //color:rgb(34, 34, 34);
 }
 
+.default{
+    opacity: 1;
+}
+
+.fade{
+    -webkit-transition: opacity 2s; /* For Safari 3.1 to 6.0 */
+    transition: opacity 2s;
+    opacity: 0;
+}
+
+.scroll{
+    position: fixed;
+    bottom:50px;
+    left:50%;
+    
+    z-index: 99999;
+}
+
+.scroll-hide{
+    display: none;
+}
+
 a {
     color: black;
 }
