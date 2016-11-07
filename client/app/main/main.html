@@ -9,7 +9,9 @@
 
 
 <div class="scroll default" ng-class="{fade: startFade}">
-    <img src="assets/images/scroll.gif" />
+    <p>click to view</p>
+    <p>scroll to see more</p>
+    <p><img src="assets/images/scroll.gif" /></p>
 </div>
 
 <section ng-repeat="item in vm.workItems | orderBy: 'order'" class="work-item" style="{{item.style}}" repeat-complete="vm.sectionsLoaded()">
